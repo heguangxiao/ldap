@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    
+    <!-- None -->
+    <definition name="none" template="/layout/none-layout.jsp">
+        <put-attribute name="all" value="" />
+    </definition>
+    
+    <!-- Authentication -->
+    <definition name="authen" template="/layout/authen-layout.jsp">
+        <put-attribute name="header" value="/include/authen/header.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/include/authen/footer.jsp" />
+    </definition>
+        
+    <!-- Login -->
+    <definition name="login" extends="authen">
+        <put-attribute name="content" value="/login.jsp" />
+    </definition>
+        
+    <!-- Register -->
+    <definition name="register" extends="authen">
+        <put-attribute name="content" value="/register.jsp" />
+    </definition>
+        
+    <!-- Forgot Password -->
+    <definition name="forgot-password" extends="authen">
+        <put-attribute name="content" value="/forgot-password.jsp" />
+    </definition>
+        
+    <!-- SB Admin -->
+    <definition name="sbAdmin" template="/layout/sb-admin-layout.jsp">
+        <put-attribute name="header" value="/include/sb-admin/header.jsp" />
+        <put-attribute name="menu" value="/include/sb-admin/menu.jsp" />
+        <put-attribute name="left" value="/include/sb-admin/left.jsp" />
+        <put-attribute name="content" value="" />
+        <put-attribute name="footer" value="/include/sb-admin/footer.jsp" />
+    </definition>
+    
+    <!-- Home -->
+    <definition name="home" extends="sbAdmin">
+        <put-attribute name="content" value="/home.jsp" />
+    </definition>
+    
+</tiles-definitions>
